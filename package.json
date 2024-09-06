@@ -8,15 +8,22 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write \"**/*.{mjs,cjs,js,jsx,ts,tsx,md,mdx,astro,json}\""
+    "format": "prettier --write \"**/*.{mjs,cjs,js,jsx,ts,tsx,md,mdx,astro,json}\"",
+    "lint": "eslint --fix"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@astrojs/check": "^0.9.3",
     "astro": "^4.15.3",
-    "typescript": "^5.5.4"
-  },
-  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.4.0"
   }
 }
