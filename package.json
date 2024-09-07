@@ -9,13 +9,15 @@
     "yarn": "Please use pnpm"
   },
   "scripts": {
+    "prepare": "husky",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "lint": "prettier --check . && eslint ."
+    "lint": "prettier --check . && eslint .",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
@@ -27,6 +29,8 @@
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6",
