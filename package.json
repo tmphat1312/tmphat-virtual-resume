@@ -34,7 +34,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@eslint/js": "^9.9.1",
     "astro": "^4.15.3",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-prettier": "^5.2.1",
