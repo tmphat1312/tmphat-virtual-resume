@@ -1,5 +1,14 @@
 {
   "name": "tmphat-dev",
+  "description": "A personal website for tmphat.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmphat1312/tmphat.dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmphat1312/tmphat.dev/issues"
+  },
+  "homepage": "https://github.com/tmphat1312/tmphat.dev#readme",
   "type": "module",
   "version": "0.0.1",
   "engines": {
