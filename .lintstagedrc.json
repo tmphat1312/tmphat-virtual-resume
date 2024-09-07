@@ -1,0 +1,4 @@
+{
+  "*.{ts,tsx,js,jsx,astro}": ["pnpm lint", "pnpm format"],
+  "*.{json,md}": "prettier --write"
+}

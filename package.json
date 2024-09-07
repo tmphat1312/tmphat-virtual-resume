@@ -1,17 +1,54 @@
 {
   "name": "tmphat-dev",
+  "description": "A personal website for tmphat.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmphat1312/tmphat.dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmphat1312/tmphat.dev/issues"
+  },
+  "homepage": "https://github.com/tmphat1312/tmphat.dev#readme",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9",
+    "npm": "Please use pnpm",
+    "yarn": "Please use pnpm"
+  },
   "scripts": {
+    "prepare": "husky",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "pre-commit": "lint-staged",
+    "test": "echo \"No tests yet\""
   },
-  "dependencies": {
-    "astro": "^4.15.3",
+  "devDependencies": {
     "@astrojs/check": "^0.9.3",
-    "typescript": "^5.5.4"
+    "@astrojs/tailwind": "^5.1.0",
+    "@eslint/js": "^9.9.1",
+    "astro": "^4.15.3",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  },
+  "volta": {
+    "node": "20.17.0"
   }
 }
