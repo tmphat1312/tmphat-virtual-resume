@@ -1,0 +1,27 @@
+<button id="dark-mode-toggle">
+  <span class="dark:hidden">light</span>
+  <span class="hidden dark:inline">dark</span>
+</button>
+
+<script>
+  document
+    .getElementById("dark-mode-toggle")!
+    .addEventListener("click", handleToggleTheme);
+
+  function handleToggleTheme() {
+    const isDarkThemeMediaQuery = () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const currentTheme =
+      localStorage.theme ?? (isDarkThemeMediaQuery() ? "dark" : "light");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.theme = newTheme;
+    // TODO: change theme color in the meta tag
+
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+</script>

@@ -1,0 +1,17 @@
+---
+import Head from "./head.astro";
+import "../styles/globals.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <Head {title} />
+  <body class="min-h-svh bg-bg text-fg dark:bg-bg_dark dark:text-fg_dark">
+    <slot />
+  </body>
+</html>
