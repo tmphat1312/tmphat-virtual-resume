@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import { cn } from "../../utils/class-name";
+
+type Props = {
+  name: string;
+  level: number /* 1 - 5 */;
+  icon: string;
+  description?: string;
+  link: string;
+};
+
+const { name, level, link, description, icon } = Astro.props;
+const maxLevel = 5;
+const levels = Array.from({ length: maxLevel }, (_, i) =>
+  i + 1 <= level ? 1 : 0,
+);
+---
+
+<article class="space-y-2.5 max-w-60">
+  <div class="flex justify-between items-center">
+    <a
+      href={link}
+      target="_blank"
+      class="inline-flex gap-1.5 items-center group">
+      {icon && <Icon name={icon} class="size-6 translate-y-[8%]" />}
+      <span class="group-hover:underline underline-offset-2 opacity-80">
+        {name}
+      </span>
+    </a>
+    {
+      description && (
+        <Icon
+          name="info"
+          class="size-6 text-gray-500 dark:text-gray-50"
+          data-tooltip={description}
+        />
+      )
+    }
+  </div>
+  <ul class="flex gap-1 overflow-clip rounded-sm">
+    {
+      levels.map((i) => (
+        <li
+          class={cn(
+            "h-2 w-full",
+            i == 0
+              ? "dark:bg-gray-500 bg-stone-200"
+              : "dark:bg-stone-200 bg-gray-400",
+          )}
+        />
+      ))
+    }
+  </ul>
+</article>

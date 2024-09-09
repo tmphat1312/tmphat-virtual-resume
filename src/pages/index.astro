@@ -1,13 +1,17 @@
 ---
 import DarkModeToggle from "../components/dark-mode-toggle.astro";
-import Main from "../sections/main/index.astro";
+import Main from "../sections/main/main-section.astro";
+import Skills from "../sections/skills/skills-section.astro";
 import Layout from "../layouts/default.astro";
 ---
 
 <Layout title="Truong Minh Phat - Software Engineer">
   <main class="container sm:px-8 py-3 sm:py-12 lg:py-20 relative">
     <DarkModeToggle />
-    <Main />
+    <div class="space-y-8">
+      <Main />
+      <Skills />
+    </div>
   </main>
   <script src="../scripts/initialize-tooltips.ts"></script>
 </Layout>

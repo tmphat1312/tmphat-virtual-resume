@@ -1,0 +1,34 @@
+---
+import SkillTag from "../../components/skill-tag.astro";
+
+const wantToLearn = [
+  {
+    href: "https://www.rust-lang.org/",
+    name: "Rust",
+    icon: "rust",
+  },
+  {
+    href: "https://www.svelte.dev/",
+    name: "Svelte",
+    icon: "svelte",
+  },
+  {
+    href: "https://mui.com/",
+    name: "Material UI",
+    icon: "mui",
+  },
+] as const;
+---
+
+<section class="mb-5">
+  <h3 class="font-bold text-lg mb-4">I want to learn</h3>
+  <ul class="flex gap-3">
+    {
+      wantToLearn.map((i) => (
+        <li>
+          <SkillTag {...i} />
+        </li>
+      ))
+    }
+  </ul>
+</section>

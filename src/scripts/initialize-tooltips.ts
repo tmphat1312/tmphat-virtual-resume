@@ -46,7 +46,7 @@ if (targetEls.length > 0) {
         tooltip.setAttribute("id", `tooltip-${nanoid(8)}`);
         tooltip.setAttribute(
           "class",
-          "absolute top-0 left-0 hidden w-max px-2.5 py-1 rounded-md bg-gray-700 text-gray-50 dark:bg-gray-50 dark:text-gray-700",
+          "absolute top-0 left-0 hidden w-max max-w-[40ch] px-2.5 py-1 rounded-md bg-gray-700 text-gray-50 dark:bg-gray-50 dark:text-gray-700 text-pretty",
         );
         tooltip.setAttribute("role", "tooltip");
 

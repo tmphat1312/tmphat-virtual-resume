@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  icon: string;
+  href: string;
+  name: string;
+};
+
+const { icon, href, name } = Astro.props;
+---
+
+<a
+  {href}
+  class="inline-flex gap-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-sm tracking-wide rounded px-2.5 py-1.5 font-medium group"
+  target="_blank">
+  {icon && <Icon name={icon} class="size-5" />}
+  <span class="group-hover:underline underline-offset-2">{name}</span>
+</a>

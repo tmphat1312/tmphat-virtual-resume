@@ -1,0 +1,65 @@
+---
+import Card from "../../components/card.astro";
+import Description from "../../components/description.astro";
+import IconLinks from "../../components/icon-links.astro";
+import TagList from "../../components/tag-list.astro";
+import Details from "./details.astro";
+import DocumentNav from "./document-nav.astro";
+---
+
+<Card class="grid grid-cols-[auto_1fr] gap-6">
+  <div>
+    <!-- TODO: optimize this profile image -->
+    <img
+      src="/profile-image.webp"
+      class="size-52 rounded-lg mb-4 dark:brightness-90"
+    />
+    <DocumentNav />
+  </div>
+  <section>
+    <div class="flex items-start justify-between">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold" lang="vi">
+          Trương Minh Phát
+        </h1>
+        <p class="font-medium sm:text-lg">Software Engineer</p>
+      </div>
+      <IconLinks
+        links={[
+          {
+            name: "facebook",
+            title: "Facebook",
+            href: "https://fb.com/tmphat1312",
+          },
+          {
+            name: "github",
+            title: "Github",
+            href: "https://github.com/tmphat1312",
+          },
+          {
+            name: "linkedin",
+            title: "Linkedin",
+            href: "https://www.linkedin.com/in/tmphat1312",
+          },
+        ]}
+      />
+    </div>
+    <Details />
+    <Description>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
+      suscipit necessitatibus dicta temporibus voluptate hic? In nesciunt
+      perferendis laboriosam reiciendis dicta inventore tempore, deleniti eum
+      eveniet accusantium quia, odio sunt quasi exercitationem qui, quo magni
+      pariatur nisi? Asperiores praesentium in placeat soluta commodi optio
+      veniam modi! Temporibus, quis! Id, soluta!
+    </Description>
+    <TagList
+      tags={[
+        "Open for hiring",
+        "Schooling",
+        "Learning Astro",
+        "Working on graduation topic",
+      ]}
+    />
+  </section>
+</Card>

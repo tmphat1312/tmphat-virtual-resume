@@ -1,5 +1,6 @@
 import twColors from "tailwindcss/colors";
 import twTypography from "@tailwindcss/typography";
+import plugin from "tailwindcss";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -22,5 +23,22 @@ export default {
       },
     },
   },
-  plugins: [twTypography],
+  plugins: [
+    twTypography,
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "auto-fill": (value) => ({
+            gridTemplateColumns: `repeat(auto-fill, minmax(min(${value}, 100%), 1fr))`,
+          }),
+          "auto-fit": (value) => ({
+            gridTemplateColumns: `repeat(auto-fit, minmax(min(${value}, 100%), 1fr))`,
+          }),
+        },
+        {
+          values: theme("width", {}),
+        },
+      );
+    }),
+  ],
 };
