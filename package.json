@@ -25,7 +25,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "lint": "prettier --check . && eslint .",
+    "check-format-and-lint": "prettier --check . && eslint .",
+    "lint": "eslint .",
     "pre-commit": "lint-staged",
     "test": "echo \"No tests yet\""
   },
