@@ -1,0 +1,23 @@
+---
+import IconLink from "./icon-link.astro";
+
+type Props = {
+  links: {
+    name: string;
+    title: string;
+    href: string;
+  }[];
+};
+
+const { links } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-3">
+  {
+    links.map((link) => (
+      <li>
+        <IconLink {...link} />
+      </li>
+    ))
+  }
+</ul>

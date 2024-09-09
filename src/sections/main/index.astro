@@ -1,21 +1,21 @@
 ---
-import ButtonLink from "../button-link.astro";
-import Card from "../card.astro";
-import IconLink from "../icon-link.astro";
-import Tag from "../tag.astro";
+import ButtonLink from "../../components/button-link.astro";
+import Card from "../../components/card.astro";
+import Description from "../../components/description.astro";
+import IconLinks from "../../components/icon-links.astro";
+import TagList from "../../components/tag-list.astro";
+import DocumentNav from "./document-nav.astro";
 ---
 
 <Card>
   <div class="grid grid-cols-[auto_1fr] gap-6">
     <div>
       <!-- TODO: optimize this profile image -->
-      <img src="/profile-image.webp" class="size-52 rounded-lg mb-4" />
-      <nav
-        aria-label="main navigation"
-        class="flex flex-col justify-center items-center gap-3">
-        <ButtonLink href="/my-cv">My CV</ButtonLink>
-        <ButtonLink href="/my-cv">My Academic Transcript</ButtonLink>
-      </nav>
+      <img
+        src="/profile-image.webp"
+        class="size-52 rounded-lg mb-4 dark:brightness-90"
+      />
+      <DocumentNav />
     </div>
     <section>
       <div class="flex items-start justify-between">
@@ -25,32 +25,26 @@ import Tag from "../tag.astro";
           </h1>
           <p class="font-medium sm:text-lg">Software Engineer</p>
         </div>
-        <ul class="flex gap-3">
-          <li>
-            <IconLink name="facebook" title="Facebook" href="facebook.com" />
-          </li>
-          <li>
-            <IconLink name="github" title="Github" href="github.com" />
-          </li>
-          <li>
-            <IconLink name="linkedin" title="Linkedin" href="linkedin.com" />
-          </li>
-        </ul>
+        <IconLinks
+          links={[
+            { name: "facebook", title: "Facebook", href: "facebook.com" },
+            { name: "github", title: "Github", href: "github.com" },
+            { name: "linkedin", title: "Linkedin", href: "linkedin.com" },
+          ]}
+        />
       </div>
       <ul class="my-4 grid grid-cols-2 gap-0.5">
         <li>
           <span class="font-medium">Phone: </span>
-          <a class="underline underline-offset-2" href="tel:0933756220">
+          <ButtonLink class="px-0.5" href="tel:0933756220">
             0933 756 200
-          </a>
+          </ButtonLink>
         </li>
         <li>
           <span class="font-medium">Email: </span>
-          <a
-            class="underline underline-offset-2"
-            href="mailto:tmphat1312@gmail.com">
+          <ButtonLink class="px-0.5" href="mailto:tmphat1312@gmail.com">
             tmphat1312@gmail.com
-          </a>
+          </ButtonLink>
         </li>
         <li>
           <span class="font-medium">From: </span>
@@ -61,20 +55,22 @@ import Tag from "../tag.astro";
           <span>Intern</span>
         </li>
       </ul>
-      <p class="my-6">
+      <Description>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
         suscipit necessitatibus dicta temporibus voluptate hic? In nesciunt
         perferendis laboriosam reiciendis dicta inventore tempore, deleniti eum
         eveniet accusantium quia, odio sunt quasi exercitationem qui, quo magni
         pariatur nisi? Asperiores praesentium in placeat soluta commodi optio
         veniam modi! Temporibus, quis! Id, soluta!
-      </p>
-      <ul class="flex gap-2.5 flex-wrap">
-        <li><Tag>Open for hiring</Tag></li>
-        <li><Tag>Schooling</Tag></li>
-        <li><Tag>Learning Astro</Tag></li>
-        <li><Tag>Working on graduation topic</Tag></li>
-      </ul>
+      </Description>
+      <TagList
+        tags={[
+          "Open for hiring",
+          "Schooling",
+          "Learning Astro",
+          "Working on graduation topic",
+        ]}
+      />
     </section>
   </div>
 </Card>
