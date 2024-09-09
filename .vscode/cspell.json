@@ -1,6 +1,14 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["astro", "astrojs", "tailwindcss", "tmphat", "tseslint"],
+  "words": [
+    "astro",
+    "astrojs",
+    "clsx",
+    "describedby",
+    "tailwindcss",
+    "tmphat",
+    "tseslint"
+  ],
   "flagWords": []
 }

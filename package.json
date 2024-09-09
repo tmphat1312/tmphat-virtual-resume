@@ -33,6 +33,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.0",
     "@eslint/js": "^9.9.1",
+    "@tailwindcss/typography": "^0.5.15",
     "astro": "^4.15.3",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
@@ -49,5 +50,12 @@
   },
   "volta": {
     "node": "20.17.0"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.10",
+    "astro-icon": "^1.1.1",
+    "clsx": "^2.1.1",
+    "nanoid": "^5.0.7",
+    "tailwind-merge": "^2.5.2"
   }
 }

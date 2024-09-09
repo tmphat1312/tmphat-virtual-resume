@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "../utils/class-name";
+
+type Props = HTMLAttributes<"a">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<a
+  {...props}
+  class={cn(
+    "bg-blue-900 px-3.5 py-1.5 rounded-lg hover:underline underline-offset-2 focus-visible:underline",
+    className,
+  )}>
+  <slot />
+  <span role="presentation">&#x2197;</span>
+</a>
