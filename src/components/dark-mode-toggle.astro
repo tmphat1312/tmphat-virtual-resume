@@ -1,6 +1,20 @@
-<button id="dark-mode-toggle">
-  <span class="dark:hidden">light</span>
-  <span class="hidden dark:inline">dark</span>
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  id="dark-mode-toggle"
+  data-tooltip="Toggle theme"
+  data-tooltip-placement="left"
+  class="absolute right-0 top-0 translate-y-1/2 text-xs bg-gray-100 dark:bg-gray-700 rounded-full px-2.5 py-1.5 border-2 border-dashed">
+  <span class="dark:hidden inline-flex items-center gap-1" role="presentation">
+    <Icon name="light-mode" class="size-4 opacity-80" />
+    Light mode
+  </span>
+  <span class="hidden dark:inline-flex items-center gap-1" role="presentation">
+    <Icon name="dark-mode" class="size-4" />
+    Dark mode
+  </span>
 </button>
 
 <script>
@@ -8,7 +22,8 @@
     .getElementById("dark-mode-toggle")!
     .addEventListener("click", handleToggleTheme);
 
-  function handleToggleTheme() {
+  function handleToggleTheme(event: MouseEvent) {
+    const button = event.currentTarget as HTMLButtonElement;
     const isDarkThemeMediaQuery = () =>
       window.matchMedia("(prefers-color-scheme: dark)").matches;
     const currentTheme =
@@ -20,8 +35,10 @@
 
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
+      button.setAttribute("aria-label", "Switch to light theme");
     } else {
       document.documentElement.classList.remove("dark");
+      button.setAttribute("aria-label", "Switch to dark theme");
     }
   }
 </script>
