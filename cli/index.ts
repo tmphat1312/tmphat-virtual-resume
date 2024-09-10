@@ -23,7 +23,7 @@ program
 
 program
   .command("generate")
-  .description("Generate favicons, open graph images, and PDF resumes")
+  .description("Generate favicons and open graph images.")
   .action(generateCommand);
 
 program.command("build").description("Build the project").action(buildCommand);
