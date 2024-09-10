@@ -9,8 +9,8 @@ import type {
 } from "favicons";
 import { favicons } from "favicons";
 
-import data from "../../favicons.data.json";
-import { ensureCleanDirExists, log } from "../helpers";
+import data from "favicons.data.json";
+import { ensureCleanDirExists, exec, log } from "../helpers";
 
 const OUTPUT_ASSETS_DIR = "public/generated/favicons";
 const OUTPUT_ASTRO_DIR = "src/web/components/metadata/generated";
