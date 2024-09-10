@@ -1,16 +1,15 @@
 {
   "name": "tmphat-dev",
+  "version": "0.0.1",
   "description": "A personal website for tmphat.dev",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tmphat1312/tmphat.dev.git"
   },
-  "bugs": {
-    "url": "https://github.com/tmphat1312/tmphat.dev/issues"
-  },
+  "bugs": "https://github.com/tmphat1312/tmphat.dev/issues",
   "homepage": "https://github.com/tmphat1312/tmphat.dev#readme",
   "type": "module",
-  "version": "0.0.1",
   "engines": {
     "node": ">=20",
     "pnpm": ">=9",
@@ -49,14 +48,15 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0"
   },
-  "volta": {
-    "node": "20.17.0"
-  },
   "dependencies": {
     "@floating-ui/dom": "^1.6.10",
+    "@fontsource-variable/inter": "^5.0.21",
     "astro-icon": "^1.1.1",
     "clsx": "^2.1.1",
     "nanoid": "^5.0.7",
     "tailwind-merge": "^2.5.2"
+  },
+  "volta": {
+    "node": "20.17.0"
   }
 }
