@@ -71,4 +71,5 @@ async function saveAstroFile(html: FaviconHtmlElement[]) {
   const astroFilePath = join(OUTPUT_ASTRO_DIR, OUTPUT_ASTRO_FILE);
 
   await writeFile(astroFilePath, [topComment, ...html].join("\n"));
+  await exec(`prettier --write ${astroFilePath} --log-level error`);
 }
