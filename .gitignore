@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # local TODO files
 **/TODO
+
+# CSpell dictionary
+.vscode/cspell.json
