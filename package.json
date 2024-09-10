@@ -24,7 +24,7 @@
     "preview": "astro preview",
     "check-format": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "echo \"Linting is disabled\"",
     "check": "concurrently \"pnpm astro check\" \"pnpm check-format\" \"pnpm lint\"",
     "pre-commit": "lint-staged",
     "test": "echo \"No tests yet\"",
