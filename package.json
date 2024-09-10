@@ -28,7 +28,9 @@
     "check": "concurrently \"pnpm astro check\" \"pnpm check-format\" \"pnpm lint\"",
     "pre-commit": "lint-staged",
     "test": "echo \"No tests yet\"",
+    "generate": "tsx cli generate",
     "generate:favicons": "tsx cli favicons",
+    "generate:colors": "tsx cli colors",
     "generate:og": "tsx cli og"
   },
   "devDependencies": {
