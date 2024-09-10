@@ -6,17 +6,14 @@ export async function buildCommand() {
     await reinstallPuppeteer();
   }
 
-  await execWithLocalServer("npm run generate");
-
+  await execWithLocalServer("pnpm run generate");
   await exec("astro build");
   process.exit(0);
 }
 
 async function reinstallPuppeteer() {
   log.info("Reinstalling puppeteer...");
-
   await exec("npm rm puppeteer --no-save");
   await exec("npm add --no-save");
-
   log.success("Puppeteer reinstalled successfully");
 }

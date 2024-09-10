@@ -53,7 +53,7 @@ export async function assertServerIsRunning() {
     await fetch(SERVER_URL);
   } catch {
     log.error(
-      "Cannot connect to the server. Please run `npm run dev` before running this command.",
+      "Cannot connect to the server. Please run `pnpm run dev` before running this command.",
     );
     process.exit(1);
   }
@@ -96,8 +96,7 @@ export async function visitPage(baseUrl: string, name: string, page: Page) {
 }
 
 async function doesPageExist(url: string) {
-  const response = await fetch(url);
-
+  const response = await fetch(url, { method: "HEAD" });
   return response.ok;
 }
 
