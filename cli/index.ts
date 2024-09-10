@@ -7,7 +7,6 @@ import { colorsCommand } from "./commands/colors";
 import { faviconsCommand } from "./commands/favicons";
 import { generateCommand } from "./commands/generate";
 import { ogCommand } from "./commands/og";
-import { pdfCommand } from "./commands/pdf";
 
 program.name("tmphat/cli").description("CLI utilities").version("0.0.1");
 
@@ -15,12 +14,6 @@ program
   .command("favicons")
   .description("Generate favicons")
   .action(faviconsCommand);
-
-program
-  .command("pdf")
-  .description("Generate PDF resumes")
-  .argument("[name]", "name of the .astro file to generate PDF from.")
-  .action(pdfCommand);
 
 program
   .command("og")
