@@ -28,7 +28,8 @@
     "check": "concurrently \"pnpm astro check\" \"pnpm check-format\" \"pnpm lint\"",
     "pre-commit": "lint-staged",
     "test": "echo \"No tests yet\"",
-    "generate:favicons": "tsx cli favicons"
+    "generate:favicons": "tsx cli favicons",
+    "generate:og": "tsx cli og"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",

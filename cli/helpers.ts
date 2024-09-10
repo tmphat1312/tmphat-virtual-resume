@@ -52,9 +52,10 @@ export async function assertServerIsRunning() {
   try {
     await fetch(SERVER_URL);
   } catch {
-    throw new Error(
+    log.error(
       "Cannot connect to the server. Please run `npm run dev` before running this command.",
     );
+    process.exit(1);
   }
 }
 
