@@ -30,8 +30,8 @@
     "test": "echo \"No tests yet\"",
     "generate": "tsx cli generate",
     "generate:favicons": "tsx cli favicons",
-    "generate:colors": "tsx cli colors",
-    "generate:og": "tsx cli og"
+    "generate:og": "tsx cli og",
+    "update:colors": "tsx cli colors"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
