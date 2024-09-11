@@ -1,6 +1,7 @@
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
+import metaTags from "astro-meta-tags";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
@@ -10,6 +11,7 @@ export default defineConfig({
     tailwind(),
     icon(),
     sitemap({ filter: (url) => new URL(url).pathname === "/" }),
+    metaTags(),
   ],
 });
 

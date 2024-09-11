@@ -20,6 +20,9 @@ importers:
       astro-icon:
         specifier: ^1.1.1
         version: 1.1.1
+      astro-meta-tags:
+        specifier: ^0.3.0
+        version: 0.3.0(astro@4.15.3(@types/node@22.5.4)(rollup@4.21.2)(typescript@5.5.4))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1141,6 +1144,11 @@ packages:
 
   astro-icon@1.1.1:
     resolution: {integrity: sha512-HKBesWk2Faw/0+klLX+epQVqdTfSzZz/9+5vxXUjTJaN/HnpDf608gRPgHh7ZtwBPNJMEFoU5GLegxoDcT56OQ==}
+
+  astro-meta-tags@0.3.0:
+    resolution: {integrity: sha512-BA8jZncOGz1DkjK4AQHt8mzXurGwhR96CZZlx2wLemRUqKTxft4N2Arg8DK/s49G/9F0g4TuxmiObVkIv/DX8g==}
+    peerDependencies:
+      astro: ^4.0.0
 
   astro@4.15.3:
     resolution: {integrity: sha512-zwO8H+vnNYbrdKz0Pkh2a4B/JK06JUvI18w+FxL3B5u4jqPB/SU+LH9XVUUWdNQsyJ/DBHKAf0LDK0RmwxXQEw==}
@@ -4544,6 +4552,10 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - supports-color
+
+  astro-meta-tags@0.3.0(astro@4.15.3(@types/node@22.5.4)(rollup@4.21.2)(typescript@5.5.4)):
+    dependencies:
+      astro: 4.15.3(@types/node@22.5.4)(rollup@4.21.2)(typescript@5.5.4)
 
   astro@4.15.3(@types/node@22.5.4)(rollup@4.21.2)(typescript@5.5.4):
     dependencies:
