@@ -22,8 +22,8 @@ const context = getGlobalContext<ContextSlice<"website" | "i18n">>(Astro);
 const t = context.i18n.t;
 
 const age =
-  basics.birthdate &&
-  intervalToDuration({ start: basics.birthdate, end: new Date() }).years;
+  basics.birthDate &&
+  intervalToDuration({ start: basics.birthDate, end: new Date() }).years;
 
 const details = [
   age && { label: t("age"), value: t("age_value", { count: age }) },
