@@ -1,13 +1,16 @@
-import { defineConfig } from "astro/config";
-
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
   site: getSiteUrl(),
-  integrations: [tailwind(), icon()],
+  integrations: [
+    tailwind(),
+    icon(),
+    sitemap({ filter: (url) => new URL(url).pathname === "/" }),
+  ],
 });
 
 function getSiteUrl() {
