@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cn } from "@/utils/cn";
 
-interface Props extends HTMLAttributes<"hr"> {}
+type Props = HTMLAttributes<"hr">;
 
 const { class: className, ...props } = Astro.props;
 ---
