@@ -3,6 +3,13 @@ import { nanoid } from "nanoid";
 
 import type { ContextSlice } from "@/types/context";
 import { getGlobalContext } from "@/utils/get-global-context";
+import { log } from "cli/helpers";
+
+const ICON_SOURCES = [
+  "https://api.iconify.design",
+  "https://api.simplesvg.com",
+  "https://api.unisvg.com",
+] as const;
 
 /**
  * Store used for server icons. Allows to:
@@ -37,16 +44,13 @@ function createIconsStore() {
 async function fetchIcon(set: string, icon: string) {
   const path = `${set}/${icon}.svg`;
 
-  const source1 = await safeFetch(`https://api.iconify.design/${path}`);
-  if (source1.result) return source1.result;
+  for (const source of ICON_SOURCES) {
+    const resp = await safeFetch(`${source}/${path}`);
+    if (resp.result) return resp.result;
+    if (resp.error) log.error(resp.error);
+  }
 
-  const source2 = await safeFetch(`https://api.simplesvg.com/${path}`);
-  if (source2.result) return source2.result;
-
-  const source3 = await safeFetch(`https://api.unisvg.com/${path}`);
-  if (source3.result) return source3.result;
-
-  throw new Error(`Cannot fetch icon: ${set}:${icon}. Error: ${source1.error}`);
+  throw new Error(`Cannot fetch icon ${set}:${icon}`);
 }
 
 async function safeFetch(url: string) {

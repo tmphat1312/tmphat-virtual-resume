@@ -20,6 +20,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      iconify-icon:
+        specifier: ^2.1.0
+        version: 2.1.0
       nanoid:
         specifier: ^5.0.7
         version: 5.0.7
@@ -1920,6 +1923,9 @@ packages:
     resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
     engines: {node: '>=18'}
     hasBin: true
+
+  iconify-icon@2.1.0:
+    resolution: {integrity: sha512-lto4XU3bwTQnb+D/CsJ4dWAo0aDe+uPMxEtxyOodw9l7R9QnJUUab3GCehlw2M8mDHdeUu/ufx8PvRQiJphhXg==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -5513,6 +5519,10 @@ snapshots:
   human-signals@8.0.0: {}
 
   husky@9.1.5: {}
+
+  iconify-icon@2.1.0:
+    dependencies:
+      '@iconify/types': 2.0.0
 
   iconv-lite@0.6.3:
     dependencies:

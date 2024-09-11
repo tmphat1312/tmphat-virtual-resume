@@ -29,14 +29,18 @@ interface Props extends IconProps {
 const { name, loading = getLoadingStrategy(Astro), ...props } = Astro.props;
 
 const icon = await getIconData(name);
+const RemoteIcon = loading === "lazy" ? IconClient : IconServer;
 ---
 
 {
   icon.type === "local" ? (
-    <IconLocal name={icon.name} aria-hidden {...props} />
-  ) : loading === "lazy" ? (
-    <IconClient set={icon.set} icon={icon.icon} aria-hidden {...props} />
+    <IconLocal name={icon.name} role="presentation" {...props} />
   ) : (
-    <IconServer set={icon.set} icon={icon.icon} aria-hidden {...props} />
+    <RemoteIcon
+      set={icon.set}
+      icon={icon.icon}
+      role="presentation"
+      {...props}
+    />
   )
 }
