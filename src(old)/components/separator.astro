@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "src(old)/utils/cn";
+
+type Props = HTMLAttributes<"hr">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<hr class={cn("border-color-separator", className)} {...props} />
