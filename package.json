@@ -69,6 +69,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "iconify-icon": "^2.1.0",
+    "marked": "^14.1.2",
     "nanoid": "^5.0.7",
     "tailwind-merge": "^2.5.2"
   },
