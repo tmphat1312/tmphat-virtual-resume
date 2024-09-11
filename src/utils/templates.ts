@@ -1,4 +1,4 @@
-const excludedKeys = ["collection", "title", "entries"] as const;
+const excludedKeys = ["collection", "title", "entries"];
 
 /** Picks all props that can be provided to the component used for section content rendering. */
 export function pickSectionProps<S extends object>(section: S) {
