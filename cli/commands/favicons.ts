@@ -48,6 +48,7 @@ async function generateFavicons() {
 async function saveFile(file: FaviconFile | FaviconImage) {
   log.info(`Creating ${file.name} file...`);
   await writeFile(`${OUTPUT_ASSETS_DIR}/${file.name}`, file.contents);
+  await exec(`prettier --write ${OUTPUT_ASSETS_DIR}`);
 }
 
 async function generateAstroFile(html: string[]) {
