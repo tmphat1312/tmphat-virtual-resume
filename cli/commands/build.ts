@@ -15,8 +15,8 @@ export async function buildCommand() {
 async function reinstallPuppeteer() {
   log.info("Reinstalling puppeteer...");
 
-  await exec("pnpm rm puppeteer --no-save");
-  await exec("pnpm add --no-save");
+  await exec("pnpm rm puppeteer");
+  await exec("pnpm add");
 
   log.success("Puppeteer reinstalled successfully");
 }
