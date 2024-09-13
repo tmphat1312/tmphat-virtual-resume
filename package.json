@@ -80,7 +80,7 @@
   "engines": {
     "node": ">=20",
     "npm": "Please use pnpm",
-    "pnpm": ">=9",
+    "pnpm": ">=8",
     "yarn": "Please use pnpm"
   },
   "volta": {
