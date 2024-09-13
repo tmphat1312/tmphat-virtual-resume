@@ -39,7 +39,7 @@ jobs:
               args: [--dev]
 
       - name: Lint
-        run: ppnpm run --if-present check
+        run: pnpm run --if-present check
 
   test:
     runs-on: ubuntu-latest
