@@ -1,8 +1,0 @@
-{
-  "$schema": "./favicons.schema.json",
-  "baseImage": "src/assets/me.jpg",
-  "appName": "Mark Freeman Resume",
-  "appShortName": "Mark Freeman Resume",
-  "appDescription": "Virtual resume of Mark Freeman",
-  "lang": "en"
-}
