@@ -6,6 +6,7 @@ export async function buildCommand() {
     await reinstallPuppeteer();
   }
 
+  await exec("pnpm generate:colors");
   await execWithLocalServer("pnpm generate");
 
   await exec("astro build");
