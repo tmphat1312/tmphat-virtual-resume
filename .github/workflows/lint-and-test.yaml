@@ -18,6 +18,9 @@ defaults:
   run:
     shell: bash
 
+env:
+  HUSKY: 0
+
 jobs:
   lint:
     runs-on: ubuntu-latest
