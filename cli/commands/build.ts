@@ -16,7 +16,7 @@ async function reinstallPuppeteer() {
   log.info("Reinstalling puppeteer...");
 
   await exec("pnpm rm puppeteer");
-  await exec("pnpm add");
+  await exec("pnpm add puppeteer");
 
   log.success("Puppeteer reinstalled successfully");
 }
