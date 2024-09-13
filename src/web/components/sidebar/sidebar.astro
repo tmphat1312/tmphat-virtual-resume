@@ -1,0 +1,36 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/utils/cn";
+import Affix from "../affix.astro";
+import ThemeSwitcher from "../theme-switcher.astro";
+
+interface Props extends HTMLAttributes<"nav"> {
+  className?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<aside
+  data-sidebar
+  class={cn([
+    "fixed xl:absolute z-10 right-5 bottom-5 xl:-right-18 xl:h-full w-max xl:block",
+    className,
+  ])}
+  {...props}
+>
+  <nav
+    class="sticky top-4 flex flex-col-reverse xl:flex-col items-center gap-2 lg:gap-4"
+  >
+    <ThemeSwitcher />
+    <ul
+      class={cn(
+        "hidden xl:grid h-fit gap-2 rounded-lg bg-color-bg-card p-2 shadow-lg",
+      )}
+    >
+      <slot />
+    </ul>
+    <Affix />
+  </nav>
+</aside>

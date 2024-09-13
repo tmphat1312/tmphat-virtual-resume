@@ -1,0 +1,7 @@
+{
+  "baseImage": "src/assets/me.png",
+  "appName": "Truong Minh Phat Resume",
+  "appShortName": "Minh Phat Resume",
+  "appDescription": "Virtual resume of Truong Minh Phat",
+  "lang": "en"
+}

@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { Icon } from "@/components/icon";
+import Tooltip from "@/web/components/tooltip.astro";
+
+interface Props extends HTMLAttributes<"main"> {
+  icon: string;
+  sectionId: string;
+}
+
+const { icon, sectionId, title } = Astro.props;
+---
+
+<li>
+  <Tooltip>
+    <a
+      slot="trigger"
+      href={`#${sectionId}`}
+      class="inline-flex size-10 items-center justify-center rounded-lg transition"
+      data-sidebar-link
+      aria-label={`${title} section`}
+    >
+      <Icon name={icon} class="size-5" />
+    </a>
+    <slot />
+  </Tooltip>
+</li>

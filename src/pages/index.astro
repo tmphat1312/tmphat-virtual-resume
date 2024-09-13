@@ -1,0 +1,144 @@
+---
+import type { ComponentProps } from "astro/types";
+
+import Head from "@/layouts/head.astro";
+import MainTemplate from "@/web/templates/main-template.astro";
+
+const props: ComponentProps<typeof MainTemplate> = {
+  context: {
+    locale: "enUS",
+    translations: "en",
+    dateFormat: "MMMM yyyy",
+    theme: "custom",
+  },
+  metadata: "main",
+  sidebar: [
+    { sectionId: "basics", icon: "fa6-solid:user", text: "About me" },
+    { sectionId: "skills", icon: "fa6-solid:bars-progress", text: "Skills" },
+    {
+      sectionId: "education",
+      icon: "fa6-solid:graduation-cap",
+      text: "Education",
+    },
+    { sectionId: "favorites", icon: "fa6-solid:star", text: "Favorites" },
+    {
+      sectionId: "interests",
+      icon: "material-symbols:interests",
+      text: "Interests",
+    },
+  ],
+  basics: "main",
+  sections: [
+    {
+      collection: "skills",
+      title: "Skills",
+      subsections: [
+        {
+          title: "Technologies",
+          withLevel: true,
+          entries: [
+            "react",
+            "next",
+            "javascript",
+            "typescript",
+            "node",
+            "tailwind",
+            "vitest",
+            "playwright",
+            "astro",
+            "drizzle-orm",
+            "shadcn",
+            "tanstack-query",
+          ],
+        },
+        {
+          title: "Tools",
+          entries: [
+            "vscode",
+            "figma",
+            "chrome-devtools",
+            "git",
+            "github",
+            "vite",
+            "notion",
+          ],
+        },
+        {
+          title: "Others",
+          entries: [
+            "bootstrap",
+            "material-ui",
+            "sass",
+            "python",
+            "fp",
+            "eslint",
+            "prettier",
+          ],
+        },
+        {
+          title: "Languages",
+          entries: ["vietnamese", "english", "japanese"],
+        },
+      ],
+    },
+    {
+      collection: "education",
+      title: "Education",
+      entries: ["bachelor"],
+    },
+    {
+      collection: "achievements",
+      title: "Achievements",
+      entries: ["deans-list-2022-2023"],
+    },
+    {
+      collection: "favorites",
+      title: "Favorites",
+      subsections: [
+        {
+          title: "Books I read",
+          image: "poster",
+          entries: [
+            "books/you-dont-know-js-series",
+            "books/breath",
+            "books/atomic-habits",
+            "books/why-we-sleep",
+            "books/sapiens",
+            "books/rich-dad-poor-dad",
+          ],
+        },
+        {
+          title: "Learning Platforms I use",
+          image: "person",
+          entries: ["learning-platforms/frontend-masters"],
+        },
+        {
+          title: "People I learn from",
+          image: "person",
+          entries: [
+            "people/dan-abramov",
+            "people/theo",
+            "people/dominik",
+            "people/lee-robinson",
+          ],
+        },
+      ],
+    },
+    {
+      collection: "interests",
+      title: "Interests",
+      entries: [
+        "reading",
+        "running",
+        "singing-alone",
+        "cleaning",
+        "organizing",
+      ],
+    },
+  ],
+};
+---
+
+<MainTemplate {...props}>
+  <Head slot="head" />
+</MainTemplate>

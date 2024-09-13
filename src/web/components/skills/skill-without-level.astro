@@ -1,0 +1,26 @@
+---
+import { Icon } from "@/components/icon";
+import Linkable from "@/components/linkable.astro";
+import type { AsyncEntry } from "@/types/entries";
+import { cn } from "@/utils/cn";
+
+interface Props {
+  /** An entry from the `skills` collection. */
+  entry: AsyncEntry<"skills">;
+}
+
+const { entry } = Astro.props;
+const { data: skill } = await entry;
+
+const iconStyle = skill.color ? { color: skill.color } : undefined;
+---
+
+<div class="flex items-center gap-2 rounded bg-color-bg-light px-2">
+  {skill.icon && <Icon name={skill.icon} class="size-4" style={iconStyle} />}
+  <Linkable
+    class={cn("py-1 text-sm font-medium text-color-text-primary")}
+    href={skill.url}
+  >
+    {skill.name}
+  </Linkable>
+</div>

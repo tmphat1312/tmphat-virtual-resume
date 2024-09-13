@@ -1,0 +1,50 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import type { AsyncEntry } from "@/types/entries";
+import RenderedContent from "@/web/components/rendered-content.astro";
+
+import BasicsDetails from "./basics-details.astro";
+import MyImage from "./my-image.astro";
+import Socials from "./socials.astro";
+
+interface Props extends HTMLAttributes<"section"> {
+  entry: AsyncEntry<"basics">;
+}
+
+const { entry, ...props } = Astro.props;
+const { data: basics, body, render } = await entry;
+---
+
+<section {...props}>
+  <div class="flex flex-col items-center md:flex-row md:items-start">
+    <MyImage size={224} class="size-28 md:size-24" basics={basics} />
+    <div
+      class="mt-4 self-center text-center md:ml-4 md:mt-0 md:space-y-0.5 md:text-left"
+    >
+      <h1 class="text-2xl font-black text-color-text-title sm:text-3xl">
+        {basics.name}
+      </h1>
+      {
+        basics.label && (
+          <h2 class="text-lg font-medium text-color-text-title sm:text-xl">
+            {basics.label}
+          </h2>
+        )
+      }
+    </div>
+    <Socials
+      listClass="flex items-center mt-3 md:ms-auto md:mt-5"
+      itemClass="h-8 min-w-8 md:size-9 flex-1"
+      socials={basics.socials}
+    />
+  </div>
+  <div class="flex flex-col md:flex-col-reverse">
+    {
+      body.trim().length > 0 && (
+        <RenderedContent class="mt-8 md:mt-4" {render} />
+      )
+    }
+    <BasicsDetails class="mt-6" basics={basics} />
+  </div>
+</section>

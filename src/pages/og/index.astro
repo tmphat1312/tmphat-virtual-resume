@@ -1,0 +1,18 @@
+---
+import { getEntry } from "astro:content";
+
+import OpenGraph from "@/layouts/open-graph.astro";
+import Head from "@/layouts/head.astro";
+
+const {
+  data: { name, label, image },
+} = await getEntry("basics", "main");
+
+const footerProps = {
+  tag: "Virtual resume",
+};
+---
+
+<OpenGraph title={name} subtitle={label} image={image} {...footerProps}>
+  <Head />
+</OpenGraph>

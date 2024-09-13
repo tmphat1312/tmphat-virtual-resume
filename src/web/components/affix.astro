@@ -1,0 +1,42 @@
+---
+import { Icon } from "@/components/icon";
+import Tooltip from "./tooltip.astro";
+---
+
+<Tooltip>
+  <button
+    slot="trigger"
+    id="scroll-to-top-button"
+    class="rounded-full bg-color-bg-card p-3 text-color-icon-dark shadow"
+    aria-label="Scroll to top"
+  >
+    <Icon name="icon-park-outline:to-top" class="size-6" />
+  </button>
+  Scroll to top
+</Tooltip>
+
+<script is:inline>
+  function handleScrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.pushState(
+      "",
+      document.title,
+      window.location.pathname + window.location.search,
+    );
+  }
+
+  function handleShowScrollToTopButton() {
+    const scrollToTopButton = document.getElementById("scroll-to-top-button");
+    if (window.scrollY > 200) {
+      scrollToTopButton.classList.remove("hidden");
+    } else {
+      scrollToTopButton.classList.add("hidden");
+    }
+  }
+
+  document
+    .getElementById("scroll-to-top-button")
+    .addEventListener("click", handleScrollToTop);
+
+  window.addEventListener("scroll", handleShowScrollToTopButton);
+</script>
